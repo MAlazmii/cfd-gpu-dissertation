@@ -1,0 +1,23 @@
+{
+  "platform": "ARCHER2 GPU development platform",
+  "gpu": "AMD Instinct MI210",
+  "grid_interior_side_per_scale": 32,
+  "openmp_compiler": "Cray CCE 20.0.0",
+  "hip_compiler": "HIP 6.3.42134",
+  "hip_architecture": "gfx90a",
+  "hip_main_block": [
+    256,
+    2
+  ],
+  "project_stream_triad_gb_s": 1312.1,
+  "model_bytes_per_point_iteration": 32,
+  "archived_log_sha256": {
+    "archer2-cgpu-cce20-14387582.out": "73ae388fd1834e7faa05560938eff786f087677b8d9b478dfa63d74b231e2e1f",
+    "archer2-hip-copyback-bx256-14417245.out": "589c75d9fddb73f885a127e0d3d68ddf94e00a424d0f3a1f5983f6ff2c4b1dde",
+    "archer2-iter-sweep-14504115.out": "5235ca1d3efaec01766062689cc790797949ebb3dcbf1af9d37270cf5aa3f77f",
+    "archer2-hip-fixed256-14528682.out": "62cf1a3fbc623cf78a432810ee2ae1f365d0564533d85b5785753da9764f4b22",
+    "archer2-hip-correctness-14417246.out": "e0bfee73f928c7e6cc4af440d357d3414753cfda64cd5bd9c7b286e994975fbd",
+    "archer2-serial-correctness-14683144.out": "3f4cfdf54ff743cb97d4347770825cd37b9efa957121ff76db6f34061a530416",
+    "hip_stream_14372923.out": "0ee27cd28512df656f79b60ccf743426284859f3f1846d4de59e7ac2cb585084"
+  }
+}

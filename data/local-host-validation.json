@@ -1,0 +1,140 @@
+{
+  "scope": "CPU serial and OpenMP host fallback only. No HIP or device execution.",
+  "host": "Apple M1 MacBook Air",
+  "operating_system": "macOS 26.6.2",
+  "host_architecture": "arm64",
+  "executable_architecture": "x86_64 under Rosetta on Apple silicon",
+  "compiler": "Apple clang version 21.0.0 (clang-2100.3.34.2)",
+  "common_compiler_flags": [
+    "-O2",
+    "-std=gnu11",
+    "-arch",
+    "x86_64",
+    "-DCFD_CORRECTNESS_CHECK",
+    "-ffp-contract=off"
+  ],
+  "openmp_compiler_flags": [
+    "-Xpreprocessor",
+    "-fopenmp"
+  ],
+  "openmp_runtime": "LLVM libomp 20.1.5",
+  "openmp_environment": {
+    "OMP_TARGET_OFFLOAD": "DISABLED",
+    "OMP_NUM_THREADS": "2",
+    "OMP_DYNAMIC": "FALSE"
+  },
+  "reference": "NumPy 1.26.4 slice-based Jacobi with a separate clipped boundary formula",
+  "temporary_instrumentation": "Replaced only post-timer plot-output calls with a binary dump of the complete double-precision field, including the boundary ring.",
+  "field_absolute_tolerance": 0.0,
+  "printed_norm_relative_tolerance": 5e-06,
+  "saved_source_sha256": {
+    "C-SER/arraymalloc.c": "f78872ccb34641a4a9139a18d0de85ee4d5271198d5788f00b610b84a7325c41",
+    "C-SER/boundary.c": "b8d6736e7652be1902b5bc9842eb5661389a44de948f3fa80cc40b454df84e0d",
+    "C-SER/cfd.c": "94b45de01a7a69591935af60717f470ae430f331f15183520e3d8663367c76d9",
+    "C-SER/cfdio.c": "fe3560d3a1da9d8db007dda9f780e2b526d6f716c84b18ec767eb242113479f6",
+    "C-SER/jacobi.c": "172b4bb1080b39db45c56e868133ddc67f875eda24b433fa00ea0ff819b48934",
+    "C-SER/arraymalloc.h": "03ce2164ef3a4a3e8f794befb2ed71916a056657e673af1c2ff22e21161a801c",
+    "C-SER/boundary.h": "d58f849900215a6b405bdff40d20b1b800ba9121f15ff8f1b1b8e1fa19bc8314",
+    "C-SER/cfdio.h": "ae88c9449741a98d2390a221f8ef1cd2fccc33f3c807c478f629d545c15026d2",
+    "C-SER/jacobi.h": "d3ee4008b34cc51cacb9c8e9aabdce92c9f001ec4c0902350d7d9af4e2fc1bd9",
+    "C-GPU/arraymalloc.c": "bf8314972725a239fb33df0b7184b2187f197cf16899d11bac4cc9c13eee1817",
+    "C-GPU/boundary.c": "6cedf056776535ff413d98911f9a3f5bd60229d10f68f4f14c1807cd2eedb6db",
+    "C-GPU/cfd.c": "c16f6c04975116ecef528809216d20c2cf180c52509d0bb6d3ca9efd343b6e6b",
+    "C-GPU/cfdio.c": "c9291e5a1837737e3c058a45e6419906bc6c4c4c27aedd35906d88ba686389f1",
+    "C-GPU/jacobi.c": "61e46e3368823de3beefbbfa6992555561f5e5138c36bd9fdcecd3da8c1f0998",
+    "C-GPU/arraymalloc.h": "03ce2164ef3a4a3e8f794befb2ed71916a056657e673af1c2ff22e21161a801c",
+    "C-GPU/boundary.h": "aa94a91e116f27bb4b822e846f578e15bc8bc8c7692e6cd252decff67f5e20be",
+    "C-GPU/cfdio.h": "677da66fc3a9e345e2813c3e7c8acc57787e11ecb039e4becc3a32959c4a39be",
+    "C-GPU/jacobi.h": "80a0bda314e8c2b8ad5f18ad17585ab510ec619bd2acd9aea320c82568301a4a"
+  },
+  "cases": [
+    {
+      "scale": 1,
+      "interior_grid_side": 32,
+      "iterations": 1,
+      "reference_normalized_update_norm": 0.25696512106962627,
+      "results": {
+        "C-SER": {
+          "field_entries_compared": 1156,
+          "field_mismatches": 0,
+          "max_absolute_field_difference": 0.0,
+          "printed_normalized_update_norm": "0.256965",
+          "printed_norm_relative_error": 4.7115198266921095e-07
+        },
+        "C-GPU": {
+          "field_entries_compared": 1156,
+          "field_mismatches": 0,
+          "max_absolute_field_difference": 0.0,
+          "printed_normalized_update_norm": "0.256965",
+          "printed_norm_relative_error": 4.7115198266921095e-07
+        }
+      }
+    },
+    {
+      "scale": 1,
+      "interior_grid_side": 32,
+      "iterations": 17,
+      "reference_normalized_update_norm": 0.02643299366506955,
+      "results": {
+        "C-SER": {
+          "field_entries_compared": 1156,
+          "field_mismatches": 0,
+          "max_absolute_field_difference": 0.0,
+          "printed_normalized_update_norm": "0.026433",
+          "printed_norm_relative_error": 2.3965996935532853e-07
+        },
+        "C-GPU": {
+          "field_entries_compared": 1156,
+          "field_mismatches": 0,
+          "max_absolute_field_difference": 0.0,
+          "printed_normalized_update_norm": "0.026433",
+          "printed_norm_relative_error": 2.3965996935532853e-07
+        }
+      }
+    },
+    {
+      "scale": 2,
+      "interior_grid_side": 64,
+      "iterations": 17,
+      "reference_normalized_update_norm": 0.02676203254122656,
+      "results": {
+        "C-SER": {
+          "field_entries_compared": 4356,
+          "field_mismatches": 0,
+          "max_absolute_field_difference": 0.0,
+          "printed_normalized_update_norm": "0.026762",
+          "printed_norm_relative_error": 1.2159474998945362e-06
+        },
+        "C-GPU": {
+          "field_entries_compared": 4356,
+          "field_mismatches": 0,
+          "max_absolute_field_difference": 0.0,
+          "printed_normalized_update_norm": "0.026762",
+          "printed_norm_relative_error": 1.2159474998945362e-06
+        }
+      }
+    },
+    {
+      "scale": 2,
+      "interior_grid_side": 64,
+      "iterations": 100,
+      "reference_normalized_update_norm": 0.006847092168423822,
+      "results": {
+        "C-SER": {
+          "field_entries_compared": 4356,
+          "field_mismatches": 0,
+          "max_absolute_field_difference": 0.0,
+          "printed_normalized_update_norm": "0.00684709",
+          "printed_norm_relative_error": 3.166926584658491e-07
+        },
+        "C-GPU": {
+          "field_entries_compared": 4356,
+          "field_mismatches": 0,
+          "max_absolute_field_difference": 0.0,
+          "printed_normalized_update_norm": "0.00684709",
+          "printed_norm_relative_error": 3.166926584658491e-07
+        }
+      }
+    }
+  ]
+}
